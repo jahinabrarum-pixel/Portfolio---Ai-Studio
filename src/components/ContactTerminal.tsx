@@ -48,8 +48,8 @@ export function ContactTerminal() {
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
-    if (activeTab === 'terminal') {
-      terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (activeTab === 'terminal' && lines.length > 1) {
+      terminalEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }, [lines, activeTab]);
 
